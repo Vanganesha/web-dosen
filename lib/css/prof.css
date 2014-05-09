@@ -1,0 +1,143 @@
+.picture {
+	position: relative;
+	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,.35);
+	   -moz-box-shadow: 0px 1px 1px rgba(0,0,0,.35);
+		    box-shadow: 0px 1px 1px rgba(0,0,0,.35);
+	}
+	
+.picture .item-description {
+	padding: 15px 15px 15px 15px;
+	border: none;
+	margin: 0px;
+	background: #fff;
+}
+
+
+
+li.active{
+    background-color: #F0F0F0;
+    font-family: cursive;
+}
+
+tombol {
+    display: block;
+    background-color: #F0F0F0;
+    background-image: url(../..//aset/gbr/bg.jpg);
+    padding: 75px 20px 20px 20px;
+}
+
+profil {
+    display: block;
+    padding-top: 4px;
+}
+
+materi {
+    display: block;
+    padding-top: 4px;
+    padding-top: 20px;
+}
+pengumuman {
+    display: block;
+    padding-top: 4px;
+}
+
+#gambar-dosen {
+ border: 1px solid rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+float: left;
+margin: 0 20px 0px 0px;
+padding: 4px;
+width: 200px;
+}
+
+#tombol-materi{
+    padding: 22px 0px 45px 22px;
+    display: block;
+}
+#putih {
+    	position: relative;
+	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,.35);
+	   -moz-box-shadow: 0px 1px 1px rgba(0,0,0,.35);
+		    box-shadow: 0px 1px 1px rgba(0,0,0,.35);
+                    	border: none;
+	
+	background: #fff;
+}
+#tam {
+    display: block;
+    box-shadow: 2px 2px 5px 0px;
+    padding: 0px 0px 2px 2px;
+}
+
+body {
+    font-family: 'DIN', sans-serif;
+    background: url('../../gambar/gbr/bg.jpg')
+}
+
+footer {
+border-top: 1px solid #92d721;
+padding: 12px 12px 12px 0px;
+background: #009223;
+color: #E2FF0D;
+font-size: 13px;
+font-family: 'DIN', sans-serif;
+}
+
+
+#nama-dosen {
+background : url('../../aset/gbr/bg.jpg');
+font-family: 'DIN Bold', sans-serif;
+font-weight: 400;
+color: #4A4A4A;
+font-size: 24px;
+margin: 5px 14px 5px 0px;
+text-transform: uppercase;
+font-family: cursive;
+}
+
+.tombol-dosen {
+border: 1px solid #ddd;
+margin-bottom: -1px;
+padding: 30px 0 10px 0;
+font-size: 14px;
+background: #efefef;
+background: -webkit-gradient(linear,left top,left bottom,from(#fafafa),to(#efefef));
+background: -webkit-linear-gradient(top,#fafafa,#efefef);
+background: -moz-linear-gradient(top,#fafafa,#efefef);
+background: -o-linear-gradient(top,#fafafa,#efefef);
+background: -ms-linear-gradient(top,#fafafa,#efefef);
+background: linear-gradient(top,#fafafa,#efefef);
+-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+display: block;
+color: #646464;
+text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+text-align: center;
+cursor: pointer;
+position: relative;
+-webkit-transition: all .3s ease;
+-moz-transition: all .3s ease;
+-ms-transition: all .3s ease;
+-o-transition: all .3s ease;
+transition: all .3s ease;
+}
+
+.tombol-dosen:hover {
+text-decoration: none;
+border-color: #a5a5a5;
+color: #444;
+text-shadow: 0 1px 0 #fff;
+-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.25);
+-moz-box-shadow: 0 0 3px rgba(0,0,0,0.25);
+box-shadow: 0 0 3px rgba(0,0,0,0.25);
+}
+
+.tombol-dosen i {
+font-size: 32px;
+}
