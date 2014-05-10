@@ -3,14 +3,23 @@
 session_start();
 error_reporting(0);
 
-if (empty($_SESSION[username]) AND empty($_SESSION[password])){ 
+if($_SESSION[tipe]=='Dosen'){
+    session_destroy();
+     include 'masuk.php';
+    echo "<br><center>Silahkan login menggunakan akun Admin,<a href='masuk.php'> klik disini</a> untuk login ke Akun Admin"; 
+}
+ elseif ($_SESSION[tipe]=='') {
+    session_destroy();
+    header('location:masuk.php');
+}
+elseif(empty($_SESSION[username]) AND empty($_SESSION[password])){ 
     include 'masuk.php';
 }
 else{
 ?>
 <html>
     <head>
-                <title>Beranda || Website Dosen Teknik Informatika</title>
+                <title>Beranda Admin || Website Dosen Teknik Informatika</title>
        <?php include 'css.php'; ?>
     </head>
 
@@ -23,7 +32,7 @@ else{
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <td>Nama</td>
+                        <td>Nama <?php echo $_SESSION[username];?></td>
                         <td>NIP</td>
                         <td>Username</td>
                         <td>Status</td>

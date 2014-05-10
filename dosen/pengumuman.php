@@ -32,7 +32,7 @@ else{
                 ?>
         
     <materi>
-        <div class="container">
+        <div class="container" style="box-shadow: 0px 1px 1px 0px; padding: 43px 30px 0px;">
             <div class="materi">
                 <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span><input class="form-control" type="text" name="filter" value="" id="filter" placeholder="Cari cepat e.g judul, matkul, dosen..." autocomplete="off"/></div><br>

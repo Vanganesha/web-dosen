@@ -1,15 +1,33 @@
-<?php include 'koneksi.php';?>
+<?php include 'koneksi.php';
+    error_reporting(E_ERROR);
+    $line = 0;
+    $page = 'materi.php';
+    $dataperpage = mysql_query("SELECT * FROM materi");
+    $numpage = mysql_num_rows($dataperpage);
+    $start = $_GET['start'];
+    $eu = $start - 0;
+    $limit = 10;
+    $thisp= $eu + $limit;
+    $back = $eu - $limit;
+    $next = $eu + $limit;
+    if(strlen($start) > 0 && !is_numeric($start)){
+        echo 'Data Error';
+        exit();
+        
+    }
+?>
+<?php session_start();?>
 <html>
     <head>
         <meta charset="UTF-8">
         <?php include 'css.php';
         include 'lib/fungsi.php';
         include 'lib/library.php';?>
-        <title>Materi Layout</title>
+        <title>Materi Perkuliahan | Website Teknik Informatika Universitas Palangka Raya</title>
     </head>
     <body>    
         <?php include 'nav.php';?>
-        <?php $gmat="SELECT a.idmateri AS imat, a.materi AS materi, c.nama AS dosen, a.judul AS judul, b.matkul AS matkul, a.tangglUpload AS tanggal FROM materi a LEFT JOIN matkul b ON a.idmatkul = b.idmatkul LEFT JOIN dosen c ON a.idDosen = c.idDosen";
+        <?php $gmat="SELECT a.idmateri AS imat, a.materi AS materi, c.nama AS dosen, a.judul AS judul, b.matkul AS matkul, a.tangglUpload AS tanggal FROM materi a LEFT JOIN matkul b ON a.idmatkul = b.idmatkul LEFT JOIN dosen c ON a.idDosen = c.idDosen order by a.tangglUpload DESC LIMIT $eu,$limit";
               $exmat=mysql_query($gmat);
         ?>
                 
@@ -46,7 +64,31 @@
                    
                 </table>
             </div>
+             <?php 
+             if($numpage>$limit){ ?>
+             <div class="text-center"><ul class="pagination"><?php
+                 if($back>=0){
+                     echo "<li><a href=$page?start=$back>PREV</a></li>";              
+                 } 
+                 $l = 1;
+                 for($i = 0; $i < $numpage;$i = $i + $limit){
+                     if($i<>$eu){
+                         echo "<li><a href=$page?start=$i>$l</a></li>";
+                         
+                     }else{
+                         echo "<li class='active'><a>$l</a></li>";}		
+                         $l = $l + 1;
+                         
+                     }
+                     
+                     if($thisp<$numpage){
+                         echo "<li><a href=$page?start=$next>NEXT</a></li>";
+                         
+                     }
+                     echo "</ul></div>";
+			}
+                        ?>
         </div></div><br>
         
-         <?php           include 'dosen/footer.php';           include 'dosen/js.php';?>
+         <?php           include 'dosen/footer.php';           include 'js.php';?>
     </body></html>

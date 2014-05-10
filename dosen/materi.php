@@ -31,7 +31,7 @@ else{
                 $exmat=  mysql_query($gmat);
                 ?>
     <materi>
-        <div class="container">
+        <div class="container" style="box-shadow: 0px 1px 1px 0px; padding: 43px 30px 0px;">
             <div class="materi">
                 <form class="form-inline">
                     <div class="input-group">

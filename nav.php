@@ -12,10 +12,20 @@
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
               <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Beranda</a></li>
-              <li><a href="materi.php"> <span class="glyphicon glyphicon-book"></span> Materi</a></li>
-              <li><a href="pengumuman.php"> <span class="glyphicon glyphicon-bullhorn"></span> Pengumuman</a></li>
-              <li><a href="dosen/"> <span class="glyphicon glyphicon-user"></span> Login Dosen</a></li>
-              <li><a href="admin/"> <span class="glyphicon glyphicon-eye-open"></span> Login Admin</a></li>
+              <li><a href="materi.php"><span class="glyphicon glyphicon-book"></span> Materi</a></li>
+              <li><a href="pengumuman.php"><span class="glyphicon glyphicon-bullhorn"></span> Pengumuman</a></li>
+              <?php 
+              if($_SESSION[tipe]=='Dosen') {?>
+              <li><a href="dosen/"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION[nama];?></a></li>
+              <?php } else { ?>
+                  <li><a href="dosen/"><span class="glyphicon glyphicon-user"></span> Login Dosen</a></li>
+             <?php } ?>
+                  <?php 
+                 if($_SESSION[tipe]=='Admin') {?> 
+              <li><a href="admin/"><span class="glyphicon glyphicon-eye-open"></span><?php echo $_SESSION[username];?></a></li>
+              <?php } else { ?>
+              <li><a href="admin/"><span class="glyphicon glyphicon-eye-open"></span> Login Admin</a></li>
+              <?php } ?>
       </ul>
       </div>
   </div>
