@@ -13,6 +13,7 @@ if ($ketemu > 0){
     $_SESSION[idDosen]=$r[idDosen];
     $_SESSION[username]=$r[username];
     $_SESSION[password]=$r[password];
+    $_SESSION[nama]=$r[nama];
     $_SESSION[tipe]='Dosen';
     
     header('location:index.php');

@@ -5,7 +5,8 @@ error_reporting(0);
 
 if($_SESSION[tipe]=='Admin'){
     session_destroy();
-    echo "Silahkan login menggunakan akun dosen,<a href='masuk.php'> klik disini</a> untuk login ke Akun Dosen"; 
+     include 'masuk.php';
+    echo "<br><center>Silahkan login menggunakan akun dosen,<a href='masuk.php'> klik disini</a> untuk login ke Akun Dosen"; 
 }
  elseif ($_SESSION[tipe]=='') {
     session_destroy();
@@ -41,17 +42,52 @@ else{
     <profil>
         <div class="container">
         <kiri>
-            <div class="col-md-6">
-                <div class="row">
+            <div class="col-md-6" style="padding-top: 20px;">
+                <div class="row" >
                     <div class="img-circle">
-                        <img class="img-rounded" src="../gambar/<?php echo $fet[foto] ;?>" id="gambar-dosen">
+                        <img class="img-rounded" src="../gambar/<?php echo $fet[foto] ;?>" id="gambar-dosen"style="width: 240px;height: 196px;" >
+                        <div id="ssd" style="box-shadow: 0px 0px 5px 0px;">
                         <h1 id="nama-dosen"><?php echo $fet[nama] ;?></h1><hr>
-                        <strong>NIP : <?php echo $fet[nip];?></strong><br>
-                        <strong>Alamat : <?php echo $fet[alamat];?></strong><br>
-                        <strong>Jabatan : <?php echo $fet[jabatan];?></strong><br>
-                        <b>Email : <?php echo $fet[email];?></b><br>
-                        <b>HP : <?php echo $fet[hp];?></b>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td ><span class="fa fa-user-md"></span></td>
+                                    <td style="padding-left: 2;"><b> NIP </b> </td>
+                                    <td style="padding-left: 2;"> :</td>
+                                    <td style="padding-left: 5;"> <?php echo " $fet[nip]";?></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td ><span class="fa fa-map-marker"></span></td>
+                                    <td style="padding-left: 2;"><b> Alamat</b> </td>
+                                    <td style="padding-left: 2;"> :</td>
+                                    <td style="padding-left: 5;"><?php echo $fet[alamat];?></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td ><span class="fa fa-briefcase"></span></td>
+                                    <td style="padding-left: 2;"><b> Jabatan </b> </td>
+                                    <td style="padding-left: 2;"> :</td>
+                                    <td style="padding-left: 5;"> <?php echo $fet[jabatan];?></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><span class="fa fa-envelope"></span></td>
+                                    <td style="padding-left: 2;"><b> Email </b> </td>
+                                    <td style="padding-left: 2;"> :</td>
+                                    <td style="padding-left: 5;"> <?php echo $fet[email];?></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><span class="fa fa-mobile-phone"></span></td>
+                                    <td style="padding-left: 2;"><b> HP </b> </td>
+                                    <td style="padding-left: 2;"> : </td>
+                                    <td style="padding-left: 5;"> <?php echo $fet[hp];?></td>
+                                </tr>
+                            </tbody>
+                        </table>
                         
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,7 +132,7 @@ else{
                     <div class="well">
                         <b class="text-center"><?php echo $fetp['judul'];?></b><br>
                         <p><?php echo $fetp['isi'];?></p>
-                        <a href="edpengumuman.php?ipeng=<?php echo $fetmat[ice];?>"> <span class="glyphicon glyphicon-edit"></span> Edit</a>|<a href="javascript:if(confirm('Apakah Anda yakin untuk menghapus penngumuman ini?')) {location.href='acpengumuman.php?id=<?php echo $fetmat[ice];?>&act=hapus'}; "><span class="glyphicon glyphicon-trash"></span> Hapus</a>
+                        <a href="edpengumuman.php?ipeng=<?php echo $fetp[ice];?>"> <span class="glyphicon glyphicon-edit"></span> Edit</a>|<a href="javascript:if(confirm('Apakah Anda yakin untuk menghapus penngumuman ini?')) {location.href='acpengumuman.php?id=<?php echo $fetp[ice];?>&act=hapus'}; "><span class="glyphicon glyphicon-trash"></span> Hapus</a>
                     </div>
                      <?php } ?>
                     

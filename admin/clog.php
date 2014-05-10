@@ -10,8 +10,7 @@ $ketemu=mysql_num_rows($get);
 $r=mysql_fetch_array($get);
 
 if ($ketemu > 0){
-    $_SESSION[iduser]=$r[iduser];
-    $_SESSION[nama]=$r[username];
+    $_SESSION[username]=$r[username];
     $_SESSION[password]=$r[password];
     $_SESSION[tipe]='Admin';
     

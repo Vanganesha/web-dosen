@@ -24,8 +24,8 @@ else{
 
     <body>
        <?php        include 'nav.php' ; include 'tombol.php'; ?>
-        <div style="padding: 22px ;"></div>
-        <div class="container" style="padding: 22px 15px 15px 15px; box-shadow: 0px 0px 5px 0px">
+        
+        <div class="container" style="padding: 22px 15px 15px 15px; box-shadow: 0px 1px 1px 0px;">
     <h1 class="text-center">Tambahkan Mata Kuliah ke Database</h1>
             <hr>
             

@@ -1,8 +1,9 @@
+<?php session_start();?>
 <html>
     <head>
         <meta charset="UTF-8">
         <?php include 'css.php'; ?>
-        <title>Home Layout</title>
+        <title>Beranda Website Dosen Teknik Informatika Universitas Palangka Raya</title>
     </head>
     <body>    
        <?php include 'nav.php'; ?>
@@ -16,7 +17,7 @@
                $fto=$hgdosen[foto];
                $nma=$hgdosen[2];
                ?>
-                <div class='col-sm-6 col-md-3' style="padding-top: 20px;">
+                <div class='col-xs-6 col-md-3' style="padding-top: 20px;">
                             <div class="picture">
                                 <a href='dosen.php?id=<?php echo $dosen;?>'><img src='gambar/<?php echo $fto;?>'  style='height: 180px; width: 100%; display: block;'></a>
                              <div class="item-description" style="text-align: center;">

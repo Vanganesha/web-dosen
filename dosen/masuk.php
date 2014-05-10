@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
     <head>
-        <title>Masuk Ke Sistem</title>
+        <title>Dosen Masuk Ke Sistem</title>
         <?php include 'css.php'; ?>
 
     </head>
@@ -15,6 +15,11 @@
                 <input class="form-control" type="password" name="password" placeholder="Masukkan Password"><br>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Masuk</button><hr>
                 <a href="daftar.php" class="btn btn-default btn-block">Daftar Disini</a><hr>
+                <div style="text-align: center;">
+                <a href="../index.php" class="btn btn-default"><span class="glyphicon glyphicon-home"></span></a>
+                <a href="../materi.php" class="btn btn-default"><span class="glyphicon glyphicon-book"></span></a>
+                <a href="../pengumuman.php" class="btn btn-default"><span class="glyphicon glyphicon-bullhorn"></span></a>
+                </div><hr>
                 <footer><p class="text-center">Website Dosen Teknik Informatika Universitas Palangkaraya</p> <hr> <p class="text-center">Program Profesional oleh Van Ray Hosea (c) 2014</p></footer>
             </form>
         </div>

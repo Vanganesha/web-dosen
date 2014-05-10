@@ -1,4 +1,4 @@
-<?php include 'koneksi.php'; include 'lib/fungsi.php'; include 'lib/library.php';?>
+<?php session_start(); include 'koneksi.php'; include 'lib/fungsi.php'; include 'lib/library.php';?>
 <?php 
                 $id=$_GET[id];
 		$sel_user="SELECT * FROM dosen WHERE iddosen='$id'";
@@ -24,24 +24,58 @@
     <profil style='padding: 70px 0px'>
         <div class="container">
         <kiri>
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-offset-3" style="padding-top: 20px;">
                 <div class="row">
                     <div class="img-circle">
-                        <img class="img-rounded" src="gambar/<?php echo $fet[foto] ;?>" id="gambar-dosen">
+                        <img class="img-rounded" src="gambar/<?php echo $fet[foto] ;?>" id="gambar-dosen" style="width: 240px;height: 197px;">
+                        <div id="ssd" style="box-shadow: 0px 0px 5px 0px;">
                         <h1 id="nama-dosen"><?php echo $fet[nama] ;?></h1><hr>
-                        <strong>NIP : <?php echo $fet[nip];?></strong><br>
-                        <strong>Alamat : <?php echo $fet[alamat];?></strong><br>
-                        <strong>Jabatan : <?php echo $fet[jabatan];?></strong><br>
-                        <b>Email : <?php echo $fet[email];?></b><br>
-                        <b>HP : <?php echo $fet[hp];?></b>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td ><span class="fa fa-user-md"></span></td>
+                                    <td style="padding-left: 2;"><b> NIP </b> </td>
+                                    <td style="padding-left: 2;"> :</td>
+                                    <td style="padding-left: 5;"> <?php echo " $fet[nip]";?></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td ><span class="fa fa-map-marker"></span></td>
+                                    <td style="padding-left: 2;"><b> Alamat</b> </td>
+                                    <td style="padding-left: 2;"> :</td>
+                                    <td style="padding-left: 5;"><?php echo $fet[alamat];?></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td ><span class="fa fa-briefcase"></span></td>
+                                    <td style="padding-left: 2;"><b> Jabatan </b> </td>
+                                    <td style="padding-left: 2;"> :</td>
+                                    <td style="padding-left: 5;"> <?php echo $fet[jabatan];?></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><span class="fa fa-envelope"></span></td>
+                                    <td style="padding-left: 2;"><b> Email </b> </td>
+                                    <td style="padding-left: 2;"> :</td>
+                                    <td style="padding-left: 5;"> <?php echo $fet[email];?></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><span class="fa fa-mobile-phone"></span></td>
+                                    <td style="padding-left: 2;"><b> HP </b> </td>
+                                    <td style="padding-left: 2;"> : </td>
+                                    <td style="padding-left: 5;"> <?php echo $fet[hp];?></td>
+                                </tr>
+                            </tbody>
+                        </table>
                         
-                    </div>
+                        </div></div>
                 </div>
             </div>
         </kiri>
         </div>
     </profil>
-    <hr>
+   
     <materi>
         <div class="container">
             <div class="panel panel-primary">
@@ -78,17 +112,18 @@
                 </div>
                 <div class="panel-body">
                     <?php while ($fetp=mysql_fetch_array($exm)){ ?>
-                    <div class="well">
+                    <div class="shadow-wrapper">
+                        <div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
                         <b class="text-center"><?php echo $fetp[judul];?></b><br>
                         <p><?php echo $fetp[isi];?></p>
                         <p>Dibuat Tanggal : <?php echo tgl_indo($fetp[tanggal]);?></p>
-                    </div>
+                        </div></div>
                     
                     <?php } ?>
                 </div>
             </div>
         </div>
     </pengumuman>
-    <?php include 'dosen/js.php';include 'dosen/footer.php';?>
+    <?php include 'js.php';include 'dosen/footer.php';?>
     </body>
 </html>

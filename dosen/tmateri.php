@@ -28,7 +28,7 @@ else{
         
     <materi>
         <div class="container">
-            <div id="tam">
+            <div id="tam" style="box-shadow: 0px 1px 1px 0px;">
                 <div style="padding-top: 2px;"><h2 class="text-center">Tambahkan Materi</h2></div>
                 
                 <form class="form-horizontal" method="post" role="form" action="acmateri.php?do=tambah" enctype="multipart/form-data">
