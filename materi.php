@@ -1,6 +1,9 @@
-<?php include 'koneksi.php';
+<?php if($_REQUEST[show]=='all'){
+     include 'semua-materi.php';
+} else {
+    include 'koneksi.php';
     error_reporting(E_ERROR);
-    $line = 0;
+    
     $page = 'materi.php';
     $dataperpage = mysql_query("SELECT * FROM materi");
     $numpage = mysql_num_rows($dataperpage);
@@ -15,8 +18,7 @@
         exit();
         
     }
-?>
-<?php session_start();?>
+session_start();?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -38,8 +40,8 @@
             </div>
             <div class="input-group">
              <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span><input class="form-control" type="text" name="filter" value="" id="filter" placeholder="Cari cepat e.g judul, matkul, dosen..." autocomplete="off"/></div><br>
-            <div class="table-responsive">
-                <table class="table table-bordered">
+            
+                <table class="table table-bordered table-responsive">
                     <thead>
                         <tr>
                             <th>Judul Materi</th>
@@ -66,29 +68,26 @@
             </div>
              <?php 
              if($numpage>$limit){ ?>
-             <div class="text-center"><ul class="pagination"><?php
+             <div class="text-center"><ul class="pagination">
+                     <li><a href="?show=all">Semua Materi</a></li><?php
                  if($back>=0){
                      echo "<li><a href=$page?start=$back>PREV</a></li>";              
                  } 
                  $l = 1;
                  for($i = 0; $i < $numpage;$i = $i + $limit){
                      if($i<>$eu){
-                         echo "<li><a href=$page?start=$i>$l</a></li>";
-                         
+                         echo "<li><a href=$page?start=$i>$l</a></li>";                         
                      }else{
                          echo "<li class='active'><a>$l</a></li>";}		
-                         $l = $l + 1;
-                         
-                     }
-                     
+                         $l = $l + 1;                         
+                     }                     
                      if($thisp<$numpage){
-                         echo "<li><a href=$page?start=$next>NEXT</a></li>";
-                         
+                         echo "<li><a href=$page?start=$next>NEXT</a></li>";                        
                      }
                      echo "</ul></div>";
 			}
                         ?>
         </div></div><br>
         
-         <?php           include 'dosen/footer.php';           include 'js.php';?>
+<?php           include 'dosen/footer.php';           include 'js.php'; }?>
     </body></html>

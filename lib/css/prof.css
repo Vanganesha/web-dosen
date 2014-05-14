@@ -190,10 +190,10 @@ body {
 }
 
 footer {
-border-top: 1px solid #92d721;
+border-top: 2px solid #6EAD05;
 padding: 12px 12px 12px 0px;
-background: #009223;
-color: #E2FF0D;
+background: #fff;
+color: rgba(0,0,0, 1);
 font-size: 13px;
 font-family: 'DIN', sans-serif;
 }

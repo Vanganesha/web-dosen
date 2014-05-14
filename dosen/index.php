@@ -31,10 +31,10 @@ else{
 		$res=mysql_query($sel_user);
 		$fet=mysql_fetch_array($res);
                 
-                $gmat="select a.idmateri as imat, a.judul as judul, b.matkul as matkul from materi a left join matkul b on a.idmatkul=b.idmatkul where idDosen='$id' limit 5";
+                $gmat="select a.idmateri as imat, a.judul as judul, b.matkul as matkul from materi a left join matkul b on a.idmatkul=b.idmatkul where idDosen='$id' order by a.tangglUpload desc limit 5";
                 $exmat=  mysql_query($gmat);
                 
-                $gm="SELECT a.idpengumuman as ice, a.judul as judul, a.isi as isi, a.tangglUpload as tanggal, b.nama as dosen from pengumuman a left join dosen b on a.idDosen=b.idDosen where a.idDosen='$id' limit 5";
+                $gm="SELECT a.idpengumuman as ice, a.judul as judul, a.isi as isi, a.tangglUpload as tanggal, b.nama as dosen from pengumuman a left join dosen b on a.idDosen=b.idDosen where a.idDosen='$id' order by a.tangglUpload desc limit 5";
                 $exm=  mysql_query($gm);
                 ?>
                 
@@ -45,8 +45,8 @@ else{
             <div class="col-md-6" style="padding-top: 20px;">
                 <div class="row" >
                     <div class="img-circle">
-                        <img class="img-rounded" src="../gambar/<?php echo $fet[foto] ;?>" id="gambar-dosen"style="width: 240px;height: 196px;" >
-                        <div id="ssd" style="box-shadow: 0px 0px 5px 0px;">
+                        <img class="img-img" src="../gambar/<?php echo $fet[foto] ;?>" id="gambar-dosen"style="width: 240px;height: 194px;" >
+                        <div id="ssd" style="box-shadow: 0px 0px 1px 0px;">
                         <h1 id="nama-dosen"><?php echo $fet[nama] ;?></h1><hr>
                         <table>
                             <tbody>
@@ -106,14 +106,14 @@ else{
                         <thead><tr>
                                 <th>Judul</th>
                                 <th>Mata Kuliah</th>
-                                <th>Aksi</th></tr>
+                                <th class="text-center">Aksi</th></tr>
                         </thead>
                         <tbody>
                             <?php while ($fetmat=mysql_fetch_array($exmat)){ ?>
                             <tr>
                             <td><?php echo $fetmat[judul];?></td>
                             <td><?php echo $fetmat[matkul];?></td>
-                            <td><a href="edmateri.php?imat=<?php echo $fetmat[imat];?>"><span class="glyphicon glyphicon-edit"></span> Edit</a>|<a href="javascript:if(confirm('Apakah Anda yakin untuk menghapus materi ini?')) {location.href='acmateri.php?id=<?php echo $fetmat[imat];?>&act=hapus'}; "><span class="glyphicon glyphicon-trash"></span> Hapus</a></td></tr><?php } ?>
+                            <td class="text-center"><a class="btn btn-primary btn-sm" href="edmateri.php?imat=<?php echo $fetmat[imat];?>"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a class="btn btn-danger btn-sm" href="javascript:if(confirm('Apakah Anda yakin untuk menghapus materi ini?')) {location.href='acmateri.php?id=<?php echo $fetmat[imat];?>&act=hapus'}; "><span class="glyphicon glyphicon-trash"></span> Hapus</a></td></tr><?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -132,7 +132,7 @@ else{
                     <div class="well">
                         <b class="text-center"><?php echo $fetp['judul'];?></b><br>
                         <p><?php echo $fetp['isi'];?></p>
-                        <a href="edpengumuman.php?ipeng=<?php echo $fetp[ice];?>"> <span class="glyphicon glyphicon-edit"></span> Edit</a>|<a href="javascript:if(confirm('Apakah Anda yakin untuk menghapus penngumuman ini?')) {location.href='acpengumuman.php?id=<?php echo $fetp[ice];?>&act=hapus'}; "><span class="glyphicon glyphicon-trash"></span> Hapus</a>
+                        <a class="btn btn-sm btn-primary" href="edpengumuman.php?ipeng=<?php echo $fetp[ice];?>"> <span class="glyphicon glyphicon-edit"></span> Edit</a> <a class="btn btn-sm btn-danger" href="javascript:if(confirm('Apakah Anda yakin untuk menghapus penngumuman ini?')) {location.href='acpengumuman.php?id=<?php echo $fetp[ice];?>&act=hapus'}; "><span class="glyphicon glyphicon-trash"></span> Hapus</a>
                     </div>
                      <?php } ?>
                     

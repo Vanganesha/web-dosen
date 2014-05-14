@@ -30,7 +30,7 @@ else{
 		$res=mysql_query($sel_user);
 		$fet=mysql_fetch_array($res);
         ?>
-        <div class="container" style="box-shadow: 0px 3px 1px; padding: 0px 20px 20px 20px;">
+        <div class="container" style="box-shadow: 0px 3px 1px; padding: 0px 20px 20px 20px; background: #fff;">
     <h1 class="text-center">Edit Profile Dosen</h1>
             <hr>
           

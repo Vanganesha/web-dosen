@@ -3,4 +3,4 @@
  <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
  <link rel="stylesheet" href="../lib/css/prof.css">
  <link rel="stylesheet" href="../lib/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="favicon.ico" type="image/ico">
+<link rel="shortcut icon" href="favicon.ico" type="image/ico">

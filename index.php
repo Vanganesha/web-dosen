@@ -25,6 +25,6 @@
                              </div></div></div>
             <?php  } ?> </div></div>
        
-       <?php           include 'dosen/footer.php';           include 'dosen/js.php';?>
+       <?php           include 'dosen/footer.php';           include 'js.php';?>
     </body>
 </html>

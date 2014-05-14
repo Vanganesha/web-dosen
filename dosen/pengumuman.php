@@ -32,7 +32,7 @@ else{
                 ?>
         
     <materi>
-        <div class="container" style="box-shadow: 0px 1px 1px 0px; padding: 43px 30px 0px;">
+        <div class="container" style="box-shadow: 0px 1px 1px 0px; padding: 43px 30px 0px; background: #fff;">
             <div class="materi">
                 <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span><input class="form-control" type="text" name="filter" value="" id="filter" placeholder="Cari cepat e.g judul, matkul, dosen..." autocomplete="off"/></div><br>
@@ -44,16 +44,16 @@ else{
                             <th>Judul Pengumuman</th>
                             <th>Isi Pengumuman</th>
                             <th>Tanggal Terbit</th>
-                            <th>Aksi</th>
+                            <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php while ($fetmat=mysql_fetch_array($exmat)){ ?>
                         <tr>
                             <td><?php echo $fetmat[judul];?></td>
-                            <td><?php echo $fetmat[isi];?></td>
+                            <td style="width: 52%;"><?php echo $fetmat[isi];?></td>
                             <td><?php echo tgl_indo($fetmat[tanggal]) ;?></td>
-                            <td><a href="edpengumuman.php?ipeng=<?php echo $fetmat[ice];?>"> <span class="glyphicon glyphicon-edit"></span> Edit</a>|<a href="javascript:if(confirm('Apakah Anda yakin untuk menghapus penngumuman ini?')) {location.href='acpengumuman.php?id=<?php echo $fetmat[ice];?>&act=hapus'}; "><span class="glyphicon glyphicon-trash"></span> Hapus</a></td>
+                            <td class="text-center" style="width: 14%;"><a class="btn btn-sm btn-primary" href="edpengumuman.php?ipeng=<?php echo $fetmat[ice];?>"> <span class="glyphicon glyphicon-edit"></span> Edit</a> <a class="btn btn-sm btn-danger" href="javascript:if(confirm('Apakah Anda yakin untuk menghapus penngumuman ini?')) {location.href='acpengumuman.php?id=<?php echo $fetmat[ice];?>&act=hapus'}; "><span class="glyphicon glyphicon-trash"></span> Hapus</a></td>
                         </tr>
                         <?php  } ?>
                         
@@ -62,7 +62,7 @@ else{
                 </table>
             </div>
         </div>
-    </materi>
+    </materi><br>
  
         <?php include 'js.php'; include 'footer.php'; ?>
     </body>

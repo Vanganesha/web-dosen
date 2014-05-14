@@ -25,7 +25,7 @@ else{
     <body>
        <?php        include 'nav.php' ; include 'tombol.php'; ?>
         
-        <div class="container" style="padding: 22px 15px 15px 15px; box-shadow: 0px 1px 1px 0px;">
+        <div class="container" style="padding: 22px 15px 15px 15px; box-shadow: 0px 1px 1px 0px; background: #fff;">
     <h1 class="text-center">Tambahkan Mata Kuliah ke Database</h1>
             <hr>
             
@@ -36,7 +36,7 @@ else{
                     </div>
                 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Tambahkan</button><a class="btn btn-default" href="index.php">Kembali</a><br>
+                    <button type="submit" class="btn btn-primary">Tambahkan</button> <br>
                      
                 </div></form>
                 

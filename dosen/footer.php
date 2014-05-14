@@ -8,7 +8,7 @@
                 <img src="logo.jpg" style="width: 50px;">
             </div>
             <div class="col-lg-4 col-lg-offset-2">
-                Dibimbing Oleh : Abdi Gunawan Vicentus, ST.,MT <br>  
+                Dibimbing Oleh : Vicentus Abdi Gunawan, ST.,MT <br>  
             </div>
         </div>
     </div>

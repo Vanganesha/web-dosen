@@ -5,10 +5,10 @@
 		$res=mysql_query($sel_user);
 		$fet=mysql_fetch_array($res);
                 
-                $gmat="select a.idmateri as imat, a.tangglUpload as tanggal, a.judul as judul, a.materi as materi, b.matkul as matkul from materi a left join matkul b on a.idmatkul=b.idmatkul where idDosen='$id' limit 5";
+                $gmat="select a.idmateri as imat, a.tangglUpload as tanggal, a.judul as judul, a.materi as materi, b.matkul as matkul from materi a left join matkul b on a.idmatkul=b.idmatkul where idDosen='$id' order by a.tangglUpload DESC limit 5";
                 $exmat=  mysql_query($gmat);
                 
-                $gm="SELECT a.judul as judul, a.isi as isi, a.tangglUpload as tanggal, b.nama as dosen from pengumuman a left join dosen b on a.idDosen=b.idDosen where a.idDosen='$id' limit 5";
+                $gm="SELECT a.judul as judul, a.isi as isi, a.tangglUpload as tanggal, b.nama as dosen from pengumuman a left join dosen b on a.idDosen=b.idDosen where a.idDosen='$id' order by a.tangglUpload DESC limit 5";
                 $exm=  mysql_query($gm);
                 
         ?>
@@ -27,8 +27,8 @@
             <div class="col-md-6 col-lg-offset-3" style="padding-top: 20px;">
                 <div class="row">
                     <div class="img-circle">
-                        <img class="img-rounded" src="gambar/<?php echo $fet[foto] ;?>" id="gambar-dosen" style="width: 240px;height: 197px;">
-                        <div id="ssd" style="box-shadow: 0px 0px 5px 0px;">
+                        <img class="img" src="gambar/<?php echo $fet[foto] ;?>" id="gambar-dosen" style="width: 240px;height: 194px;">
+                        <div id="ssd" style="box-shadow: 0px 0px 1px 0px;">
                         <h1 id="nama-dosen"><?php echo $fet[nama] ;?></h1><hr>
                         <table>
                             <tbody>

@@ -27,8 +27,8 @@ else{
         include 'tombol.php';?>
         
     <materi>
-        <div class="container">
-            <div id="tam" style="box-shadow: 0px 1px 1px 0px;">
+        <div class="container"><br><br><br>
+            <div id="tam" style="box-shadow: 0px 1px 1px 0px; background: #fff;">
                 <div style="padding-top: 2px;"><h2 class="text-center">Tambahkan Materi</h2></div>
                 
                 <form class="form-horizontal" method="post" role="form" action="acmateri.php?do=tambah" enctype="multipart/form-data">
@@ -73,7 +73,7 @@ else{
                 
             </form>   
             </div></div>
-    </materi><br><br><br><br><br>
+    </materi><br><br><br>
  
         <?php include 'js.php'; include 'footer.php'; ?>
     </body>

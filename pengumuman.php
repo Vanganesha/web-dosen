@@ -1,4 +1,11 @@
 <?php session_start();
+    /*
+     * FILE   : Pengumuman.php
+     * Author : Van Ray Hosea
+     * FOR    : Program Profesional 2014
+     */
+
+     //Pengaturan Pembuatan Halaman
     include 'koneksi.php';
     error_reporting(E_ERROR);
     $line = 0;
@@ -66,5 +73,5 @@
 			}
                         ?>
         </div></div><br>
-         <?php           include 'dosen/footer.php';           include 'dosen/js.php';?>
+         <?php           include 'dosen/footer.php';           include 'js.php';?>
     </body></html>
